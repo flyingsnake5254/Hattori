@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".bottom_nav_bar.TestFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/m7_bg"
+        android:alpha="0.2"
+        android:scaleType="fitCenter"/>
+
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
