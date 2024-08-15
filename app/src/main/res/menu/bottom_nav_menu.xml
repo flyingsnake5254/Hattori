@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_nav_bar_test"
+        android:icon="@drawable/m7_logo"
+        android:title="測驗" />
+    <item
+        android:id="@+id/bottom_nav_bar_add"
+        android:icon="@drawable/m11_logo"
+        android:title="新增" />
+    <item
+        android:id="@+id/bottom_nav_bar_manage"
+        android:icon="@drawable/m15_logo"
+        android:title="管理" />
+</menu>
