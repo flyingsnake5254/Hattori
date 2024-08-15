@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".bottom_nav_bar.AddFragment">
 
+    <!--背景-->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,10 +14,71 @@
         android:alpha="0.2"
         android:scaleType="fitCenter"/>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- word card -->
+            <LinearLayout
+                android:id="@+id/word_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+            </LinearLayout>
+
+            <!-- image -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:id="@+id/photo"/>
+        </LinearLayout>
+    </ScrollView>
+
+<!-- button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--add button-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/btn_add"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/btn_save"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitCenter"
+            app:contentPadding="7dp"
+            android:src="@drawable/kudo_head"
+            android:clickable="true"
+            android:background="#eeeeee"
+            android:foreground="@drawable/circle_ripple"
+            app:shapeAppearanceOverlay="@style/circle" />
+
+        <!-- save button -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/btn_save"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitCenter"
+            app:contentPadding="7dp"
+            android:src="@drawable/heiji_head"
+            android:clickable="true"
+            android:background="#eeeeee"
+            android:foreground="@drawable/circle_ripple"
+            app:shapeAppearanceOverlay="@style/circle" />
+
+
+    </RelativeLayout>
 
 </FrameLayout>
