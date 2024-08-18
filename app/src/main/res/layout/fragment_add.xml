@@ -22,6 +22,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <!-- image -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:visibility="gone"
+                android:id="@+id/photo"/>
+
             <!-- word card -->
             <LinearLayout
                 android:id="@+id/word_cardview"
@@ -31,11 +38,71 @@
                 android:orientation="horizontal">
             </LinearLayout>
 
-            <!-- image -->
-            <ImageView
+            <!-- 中英文 radio button -->
+            <RadioGroup
+                android:id="@+id/language_radio_group"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:id="@+id/photo"/>
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/radio_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginRight="10dp"
+                    android:text="英文"/>
+                <RadioButton
+                    android:id="@+id/radio_chinese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中文"/>
+
+            </RadioGroup>
+
+            <!-- block, line, element radio group -->
+            <RadioGroup
+                android:id="@+id/text_mode_radio_group"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/block"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="block"/>
+                <RadioButton
+                    android:id="@+id/line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="line"/>
+                <RadioButton
+                    android:id="@+id/element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="element"/>
+
+            </RadioGroup>
+
+
+            <!-- 擷取文字 -->
+            <LinearLayout
+                android:id="@+id/recogn_english_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical"/>
+
+            <LinearLayout
+                android:id="@+id/recogn_chinese_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical"/>
+
+
+
         </LinearLayout>
     </ScrollView>
 

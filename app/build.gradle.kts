@@ -45,4 +45,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // To recognize Latin script
+    implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.0")
+    // To recognize Chinese script
+    implementation("com.google.android.gms:play-services-mlkit-text-recognition-chinese:16.0.0")
 }
