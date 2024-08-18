@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".bottom_nav_bar.ManageFragment">
 
-
+    <!-- 背景圖片 -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,10 +13,6 @@
         android:alpha="0.2"
         android:scaleType="fitCenter"/>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
 
 </FrameLayout>

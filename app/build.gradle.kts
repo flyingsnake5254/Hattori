@@ -50,4 +50,11 @@ dependencies {
     implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.0")
     // To recognize Chinese script
     implementation("com.google.android.gms:play-services-mlkit-text-recognition-chinese:16.0.0")
+
+
+    // room db
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
 }

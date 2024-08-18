@@ -41,6 +41,10 @@ import android.widget.Toast;
 import com.example.hattori.CustomEditText;
 import com.example.hattori.CustomTextView;
 import com.example.hattori.R;
+import com.example.hattori.database.AppDatabase;
+import com.example.hattori.database.AppDatabaseClient;
+import com.example.hattori.database.Word;
+import com.example.hattori.database.WordDao;
 import com.example.hattori.databinding.FragmentAddBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -53,6 +57,8 @@ import com.google.mlkit.vision.text.chinese.ChineseTextRecognizerOptions;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
 import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -99,6 +105,9 @@ public class AddFragment extends Fragment {
     // CardView
     View wordCard;
 
+    // database
+    AppDatabase db;
+    WordDao wordDao;
 
 
     public AddFragment() {
@@ -140,9 +149,11 @@ public class AddFragment extends Fragment {
         binding = FragmentAddBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
+
         listener();
         initLauncher();
         initRecognizer();
+        initDatabase();
 
 
         // action bar
@@ -239,6 +250,42 @@ public class AddFragment extends Fragment {
     public void click_save() {
         // 清空 word linearlayout 中的所有子視圖
         binding.wordCardview.removeAllViews();
+
+        // 取得單字卡上的 widget
+        EditText eWord = (EditText) wordCard.findViewById(R.id.card_word);
+        EditText eKk = (EditText) wordCard.findViewById(R.id.card_kk);
+        EditText eWordZh = (EditText) wordCard.findViewById(R.id.card_word_zh);
+        EditText eSentence = (EditText) wordCard.findViewById(R.id.card_sentence_en);
+        EditText eSentenceZh = (EditText) wordCard.findViewById(R.id.card_sentence_zh);
+        EditText eAnswer = (EditText) wordCard.findViewById(R.id.card_answer);
+        EditText eRemark = (EditText) wordCard.findViewById(R.id.card_remark);
+
+        // 建立 Word
+        Word word = new Word(
+                eWord.getText().toString(),
+                eKk.getText().toString(),
+                eWordZh.getText().toString(),
+                eSentence.getText().toString(),
+                eSentenceZh.getText().toString(),
+                eAnswer.getText().toString(),
+                eRemark.getText().toString()
+        );
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                // 插入數據
+                wordDao.insertWord(word);
+
+                // 在主執行緒中更新 UI
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getContext(), "新增完成", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
     }
 
     private void initLauncher() {
@@ -547,5 +594,10 @@ public class AddFragment extends Fragment {
                 }
             }
         });
+    }
+
+    private void initDatabase() {
+        db = AppDatabaseClient.getInstance(getActivity().getApplicationContext()).getAppDatabase();
+        wordDao = db.wordDao();
     }
 }
