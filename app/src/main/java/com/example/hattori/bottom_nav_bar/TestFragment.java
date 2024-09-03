@@ -1,5 +1,6 @@
 package com.example.hattori.bottom_nav_bar;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.hattori.R;
+import com.example.hattori.databinding.FragmentTestBinding;
+import com.example.hattori.sentence_choice.SentenceChoice;
+import com.example.hattori.word_listening.WordListening;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +28,11 @@ public class TestFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    // bind
+    private FragmentTestBinding binding;
+
 
     public TestFragment() {
         // Required empty public constructor
@@ -60,7 +68,36 @@ public class TestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test, container, false);
+        // 初始化 ViewBinding
+        binding = FragmentTestBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+        // initial listener
+        listener();
+
+        return view;
+    }
+
+
+    // button listener
+    private void listener() {
+        // 例句選擇測驗 (m6)
+        binding.btnSentenceChoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SentenceChoice.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // 單字聽力
+        binding.btnWordListening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), WordListening.class);
+                startActivity(intent);
+            }
+        });
     }
 }

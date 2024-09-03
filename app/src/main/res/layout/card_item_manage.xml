@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="8dp"
+    android:layout_margin="10dp"
     android:alpha="0.5"
     app:cardCornerRadius="15dp">
 
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -21,6 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/card_edittext_background"
+                android:cursorVisible="true"
                 android:textCursorDrawable="@drawable/aptx4869_small"
 
                 android:hint="單字"
@@ -28,14 +30,30 @@
                 android:textColor="#008800"/>
             <EditText
                 android:id="@+id/card_kk"
+                android:layout_toRightOf="@id/card_word"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/card_edittext_background"
+                android:cursorVisible="true"
                 android:textCursorDrawable="@drawable/aptx4869_small"
 
                 android:hint="[KK音標]"/>
-        </LinearLayout>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/manage_edit"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitCenter"
+                app:contentPadding="7dp"
+                android:src="@drawable/m11_logo"
+
+                android:clickable="true"
+                android:foreground="@drawable/circle_ripple"
+                app:shapeAppearanceOverlay="@style/circle" />
+
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/card_edittext_background"
+                android:cursorVisible="true"
                 android:textCursorDrawable="@drawable/aptx4869_small"
 
                 android:hint="單字中文"/>
@@ -55,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/card_edittext_background"
+                android:cursorVisible="true"
                 android:textCursorDrawable="@drawable/aptx4869_small"
 
                 android:hint="例句"/>
@@ -64,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/card_edittext_background"
+                android:cursorVisible="true"
                 android:textCursorDrawable="@drawable/aptx4869_small"
 
                 android:hint="翻譯"/>
@@ -73,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/card_edittext_background"
+                android:cursorVisible="true"
                 android:textCursorDrawable="@drawable/aptx4869_small"
 
                 android:hint="答案"/>
@@ -82,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/card_edittext_background"
+                android:cursorVisible="true"
                 android:textCursorDrawable="@drawable/aptx4869_small"
 
                 android:hint="備註"/>

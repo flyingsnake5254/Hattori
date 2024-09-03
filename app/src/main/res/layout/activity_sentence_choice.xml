@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sentence_choice.SentenceChoice">
+
+    <!-- 背景圖片 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/m6_bg"
+        android:alpha="0.2"
+        android:scaleType="fitCenter"/>
+    <LinearLayout
+        android:id="@+id/sentence_choice_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:src="@drawable/holmes"/>
+            <EditText
+                android:id="@+id/test_sentence_choice_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textCursorDrawable="@drawable/aptx4869_small"
+                android:gravity="center"
+                android:inputType="number"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/blood"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:visibility="invisible"
+            android:src="@drawable/blood"
+            android:layout_margin="10dp"
+
+            android:clickable="true"
+            android:foreground="@drawable/rect_ripple" />
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

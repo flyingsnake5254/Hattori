@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/voice_setting"
+        android:icon="@drawable/voice_changer"
+        android:title="voice setting"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/word_listening_select_voice"
+        android:icon="@drawable/soccer"
+        android:title="voice select"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/word_listening_start"
+        android:icon="@drawable/badge"
+        android:title="voice setting"
+        app:showAsAction="ifRoom"/>
+</menu>

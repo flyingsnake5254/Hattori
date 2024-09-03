@@ -3,19 +3,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".bottom_nav_bar.TestFragment">
 
+    <!-- 背景圖片 -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/m7_bg"
         android:alpha="0.2"
         android:scaleType="fitCenter"/>
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/btn_sentence_choice"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="#00000000"
+                    android:foreground="@drawable/rect_ripple"
+                    android:src="@drawable/m6"/>
+                <ImageButton
+                    android:id="@+id/btn_word_listening"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:background="#00000000"
+                    android:foreground="@drawable/rect_ripple"
+                    android:src="@drawable/m13"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

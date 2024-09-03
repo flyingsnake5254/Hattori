@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#80eeeeee" /> <!-- 背景色，可設為透明 -->
+    <stroke
+        android:width="2dp"
+        android:color="#80eeeeee" /> <!-- 邊框的顏色 -->
+    <corners android:radius="30dp" /> <!-- 設置圓角半徑，確保夠大以達到圓形效果 -->
+</shape>
